@@ -1,0 +1,116 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/SendMessage",
+  "definitions": {
+    "SendMessage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "chat_id": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "parse_mode": {
+          "type": "string"
+        },
+        "disable_web_page_preview": {
+          "type": "boolean"
+        },
+        "disable_notification": {
+          "type": "boolean"
+        },
+        "reply_to_message_id": {
+          "type": "integer"
+        },
+        "allow_sending_without_reply": {
+          "type": "boolean"
+        },
+        "reply_markup": {
+          "type": "string"
+        },
+        "entities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Entity"
+          }
+        }
+      },
+      "required": [
+        "chat_id",
+        "text"
+      ],
+      "title": "SendMessage"
+    },
+    "Entity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "offset": {
+          "type": "integer"
+        },
+        "length": {
+          "type": "integer"
+        },
+        "url": {
+          "type": "integer"
+        },
+        "user": {
+          "$ref": "#/definitions/User"
+        },
+        "language": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "length",
+        "offset",
+        "type"
+      ],
+      "title": "Entity"
+    },
+    "User": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "is_bot": {
+          "type": "boolean"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "language_code": {
+          "type": "string"
+        },
+        "can_join_groups": {
+          "type": "boolean"
+        },
+        "can_read_all_group_messages": {
+          "type": "boolean"
+        },
+        "supports_inline_queries": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "first_name",
+        "id",
+        "is_bot"
+      ],
+      "title": "User"
+    }
+  }
+}

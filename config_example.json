@@ -1,0 +1,8 @@
+{
+  "port": 9090,
+  "host": "localhost",
+  "auth": {
+    "app_id": 123,
+    "app_hash": "abc"
+  }
+}
